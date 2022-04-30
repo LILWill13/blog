@@ -1,13 +1,19 @@
+// requierments for using sequelize
 const { Model, DataTypes } = require('sequelize');
+// imports the bcrypt libary 
 const bcrypt = require('bcrypt');
+// imports the connection to the database
 const sequelize = require('../config/connection');
 
 class User extends Model {
+  // checks that the password inputed is the password that is in the database
   checkPassword(loginPw) {
+    // returns a boolean
     return bcrypt.compareSync(loginPw, this.password);
-  }
+  };
 }
 
+// creats the blueprint for the user table
 User.init(
   {
     id: {
@@ -42,6 +48,7 @@ User.init(
   },
   {
     hooks: {
+      // encrypts a new or updated password
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -49,7 +56,7 @@ User.init(
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
-      },
+      }
     },
     sequelize,
     timestamps: false,

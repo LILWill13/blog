@@ -1,14 +1,14 @@
 [
     {
      "title": "Apple",
-     "description": "Apple is dropping a new phone that is the same as the last phone and it is the eaxact same aside from the camera."
+     "text": "Apple is dropping a new phone that is the same as the last phone and it is the eaxact same aside from the camera."
     },
     {
      "title": "Google",
-     "description": "Great app 10/10."
+     "text": "Great app 10/10."
     },
     {
      "title": "Metaverse",
-     "description": "Run and hide before you become a robot."
+     "text": "Run and hide before you become a robot."
     }
 ]

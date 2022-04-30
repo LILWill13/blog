@@ -1,8 +1,11 @@
+// connects to sequelize libirary
 const Sequelize = require('sequelize');
+// connects to dotenv package
 require('dotenv').config();
 
 let sequelize;
 
+// hides our password and username 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

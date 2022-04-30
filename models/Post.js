@@ -1,8 +1,11 @@
+// requierments for using sequelize
 const { Model, DataTypes } = require('sequelize');
+// imports the connection to the database
 const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+// creats the blueprint for the post table
 Post.init(
   {
     id: {
@@ -25,6 +28,7 @@ Post.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      // creates the connection between the tables
       references: {
         model: 'user',
         key: 'id',
