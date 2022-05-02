@@ -9,7 +9,7 @@ const exphbs = require('express-handlebars');
 // imports the routes from the controllers folder
 const routes = require('./controllers');
 // imports the helper fucntion from the utils folder
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 // imports the connection to the database
 const sequelize = require('./config/connection');
@@ -22,7 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 
 // sets up cookies so they can be used in app
 const sess = {
