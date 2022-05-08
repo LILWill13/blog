@@ -1,13 +1,14 @@
-const newFormHandler = async (event) => {
+const newPost = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#title').value.trim();
-  const text = document.querySelector('#text').value.trim();
+  const title = document.querySelector('#title').value;
+  const text = document.querySelector('#text').value;
 
   if (title && text) {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ title, text }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify( {title, text}),
     });
 
     if (response.ok) {
@@ -18,7 +19,7 @@ const newFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
+const deletePost = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -36,8 +37,8 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newPost);
 
 document
   .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .addEventListener('click', deletePost);

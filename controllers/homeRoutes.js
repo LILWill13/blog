@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // imports the tables for the database
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 // function imported from the utils folder
 const auth = require('../utils/auth');
 
@@ -35,9 +35,9 @@ router.get('/post/:id', async (req, res) => {
     // finds the specific post that has the passed in id
     const postData = await Post.findByPk(req.params.id, {
       include: [
+        User,
         {
-          model: User,
-          attributes: ['first_name'],
+          model: Comment,
         },
       ],
     });
@@ -50,18 +50,18 @@ router.get('/post/:id', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
-  }
+  };
 });
 
 // Use auth middleware to prevent access to route
 router.get('/profile', auth, async (req, res) => {
+
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: post }],
+      include: [{ model: Post }],
     });
-
     const user = userData.get({ plain: true });
 
     res.render('profile', {
