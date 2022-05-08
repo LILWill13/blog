@@ -1,3 +1,95 @@
+:root {
+ --greenish: rgb(158, 221, 197);
+ --brownish: rgb(43, 29, 29);
+}
 
+body {
+    background-color: var(--greenish);
+    margin: 0px;
+    padding: 0px;
+}
  
-  
+header {
+    background-color: var(--brownish);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    padding-left: 40px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-text{
+    color: var(--greenish);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#logout{
+    background-color: black;
+}
+
+.title-box{
+    margin-top: 20px;
+    background-color:var(--greenish);
+    display: flex;
+    flex-wrap: wrap;
+    width: 15rem;
+    height: 6em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px rgb(143, 154, 147);
+}
+
+#title-text{
+    font-family: 'Koulen', cursive;
+    color: var(--brownish);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.card{
+    margin: 15px;
+    border: 5px solid var(--brownish);
+}
+
+.card-head{
+    display: flex;
+    background-color: var(--brownish);
+    justify-content: space-between;
+    color:rgb(195, 192, 192);
+    padding:0 10px;
+}
+
+.card-head a{
+    color:rgb(195, 192, 192);
+    text-decoration: none;
+}
+
+.card-head h2{
+    font-size: 17px;
+}
+
+.card-head h3{
+    font-size: 25px;
+}
+
+.card-body{
+    padding:0 10px;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column
+}
+
+h4 a{
+    color: var(--brownish);
+    font-size: 25px;
+    text-decoration: none;
+}

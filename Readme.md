@@ -16,6 +16,7 @@ Tech blog to learn about the newest tech updates
 
 ## Website
 
+https://blog123455.herokuapp.com/
 
 ## Questions 
 

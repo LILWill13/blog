@@ -1,25 +1,30 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
+  <div class="card">
+    <div class="card-head">
+      <h2>Login</h2>
+    </div>
+    <form class="login-form">
+      <div>
         <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <input type="text" id="email-login" />
       </div>
-      <div class="form-group">
+      <div>
         <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input type="password" id="password-login" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+      <div>
+        <button type="submit">login</button>
       </div>
     </form>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
 
-    <form>
+
+
+  <div class="card">
+    <div class="card-head">
+      <h2>Signup</h2>
+    </div>
+    <form class="signup-form">
       <div>
         <label for="first_name-signup">First name:</label>
         <input type="text" id="first_name-signup" />
@@ -41,6 +46,5 @@
       </div>
     </form>
   </div>
-</div>
 
 <script src="./js/login.js"></script>

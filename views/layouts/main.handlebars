@@ -5,24 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div>
     <header>
-      <h1>
-        <a href="/">Latest Tech Devlopments!</a>
-      </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button>logout</button>
+        <a class="nav-text" href="/profile">profile</a> 
+        <button class="nav-text" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="nav-text" href="/login">login</a>
         {{/if}}
       </nav>
+      <div class="title-box">
+        <h1>
+          <a id="title-text" href="/">The Tech Blog</a>
+        </h1>
+      </div>
     </header>
     <main>
       <!-- Render the sub layout -->
