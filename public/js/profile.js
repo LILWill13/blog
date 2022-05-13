@@ -1,10 +1,11 @@
 const newPost = async (event) => {
   event.preventDefault();
-
+console.log('red')
   const title = document.querySelector('#title').value;
   const text = document.querySelector('#text').value;
 
   if (title && text) {
+    console.log(title, text);
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -36,9 +37,9 @@ const deletePost = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('#new-post')
   .addEventListener('submit', newPost);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.delete-post')
   .addEventListener('click', deletePost);
