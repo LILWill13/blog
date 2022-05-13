@@ -1,4 +1,4 @@
-# Note taker app
+# Blog
 ## Description
 Tech blog to learn about the newest tech updates
 
